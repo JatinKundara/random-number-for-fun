@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generater</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background:url(./shibam-pal-YiWkuOsjLn0-unsplash.jpg) no-repeat center center/cover;
+        }
+        h2{
+            color: #fff;
+            margin: 1rem;
+            font-size: 2rem;
+        }
+        #number{
+            background-color: #fff;
+            padding: .5rem;
+            border-radius: 1rem;
+            font-size: 2rem;
+        }
+        button{
+            padding: 0.5rem 2.5rem;
+            font-size: 1.8rem;
+            position: absolute;
+            bottom: 5%;
+            background-color: #000;
+            color: #fff;
+            font-weight: 500;
+            border: 0;
+            outline: 0;
+            border-radius: 0.5rem;
+        }
+        #oldNum{
+            color: #fff;
+            margin-top: 1rem;
+            font-size: 1.4rem;
+            background-color: #ffffff5f;
+            padding: 10px;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <h2>Random number</h2>
+            <p id="number">--</p>
+            <p id="oldNum" ></p>
+        </div>
+        <button id="getBtn">Get</button>
+    </div>
+
+    <script>
+
+        const number = document.querySelector("#number");
+        const btn = document.querySelector("button");
+        const oldNum = document.querySelector("#oldNum");
+
+        const arr = Array();
+
+        btn.addEventListener('click', () => {
+            let rnNum = Math.floor(Math.random() * 99);
+            number.innerHTML = rnNum;
+
+            oldNum.innerHTML += `${rnNum}, `;
+        });
+
+        
+
+    </script>
+</body>
+</html>
